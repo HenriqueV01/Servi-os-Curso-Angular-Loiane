@@ -1,0 +1,18 @@
+<h5 style="text-align: center;">Lista de cursos</h5>
+<br>
+<div class="container">
+  <input type="text" #campoInput><button (click)="onAddCurso(campoInput.value)">Adicionar Curso</button>
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>Curso</th>
+    </thead>
+    <tbody *ngIf="cursos.length > 0">
+      <tr *ngFor="let curso of cursos; let i = index">
+        <td>{{ i+1 }}</td>
+        <td>{{ curso }}</td>
+      </tr>
+    </tbody>
+    <h3 *ngIf="cursos.length==0">Não há cursos</h3>
+  </table>
+</div>
